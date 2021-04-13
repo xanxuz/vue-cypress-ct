@@ -1,8 +1,10 @@
 import { mount } from '@cypress/vue'
 import HelloWorld from './HelloWorld'
 
-it('HelloWorld', () => {
-  mount(HelloWorld)
+describe('HelloWorld.vue', () => {
+  it('has the .hello class', () => {
+    mount(HelloWorld)
 
-  cy.contains('.hello')
+    cy.contains('.hello')
+  })
 })
