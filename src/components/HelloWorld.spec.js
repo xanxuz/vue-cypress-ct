@@ -5,6 +5,6 @@ describe('HelloWorld.vue', () => {
   it('has the .hello class', () => {
     mount(HelloWorld)
 
-    cy.contains('.hello')
+    cy.get('.hello')
   })
 })
