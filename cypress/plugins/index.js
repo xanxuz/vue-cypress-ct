@@ -25,7 +25,19 @@ module.exports = (on, config) => {
 
   if (config.testingType === 'component') {
     on('dev-server:start', (options) => {
-      return startDevServer({ options, webpackConfig })
+      // Omit PWA Plugin during testing
+      // Resource: https://github.com/cypress-io/cypress/issues/15968#issuecomment-819170918
+      const modifiedWebpackConfig = {
+        ...webpackConfig,
+        plugins: (webpackConfig.plugins || []).filter((x) => {
+          return x.constructor.name !== 'HtmlPwaPlugin'
+        })
+      }
+
+      return startDevServer({
+        options,
+        webpackConfig: modifiedWebpackConfig
+      })
     })
   }
 
