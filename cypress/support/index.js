@@ -16,6 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import '@/assets/css/app.css'
+import '@/plugins/i18n'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
