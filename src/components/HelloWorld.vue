@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 v-text="$t('Welcome')" />
+    <h1 v-text="$t('welcomeMessage')" />
     <h2>{{ msg }}</h2>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
